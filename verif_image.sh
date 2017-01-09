@@ -6,19 +6,19 @@
 verif_presence_image(){
 	
 	compteur_image=0
-	tableau_format=('*.jpg' '*.png' '*.gif' '*.bmp')	
+	format= [[*.jpg]] [[*.png]] [[*.gif]] [[*.bmp]] 
+		
 	liste_fichier=`ls $1`
 	#sortie=`exit`
 
 	for fichier in $liste_fichier
 	do
-		for format in $tableau_format
+		for format in $format
 		do
-			if [ $fichier == $format ]
+			if [[ "$fichier" = *.jpg ]] || [[ "$fichier" = *.png ]] || [[ "$fichier" = *.gif ]] || [[ "$fichier" = *.bmp ]]
 			then
-				compteur_image= $compteur_image + 1
-			else
-				compteur_image= $compteur_image	
+				compteur_image=$(( $compteur_image + 1))
+				echo "$compteur_image"
 			fi
 		done
 	done
@@ -28,6 +28,7 @@ verif_presence_image(){
 		echo " Vous devait choisir un nouveau dossier "
 		echo `exit`
 	else	
-		echo " Il y a $compteur_image dans le dossier "
+		echo " Il y a $compteur_image images dans le dossier "
 	fi
 }
+verif_presence_image $1
