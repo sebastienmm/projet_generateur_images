@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./verif_fichier_traité.sh $1
+./verif_fichier_traite.sh $1
 ./verif_exist_miniature.sh $2
 ./convert_images.sh
 ./generateur_entete_html.sh
