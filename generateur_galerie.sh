@@ -3,8 +3,8 @@
 . verif_fichier_traite.sh 
 verif_dossier_traite $1
 
-#. verif_image.sh
-#verif_presence_image $1
+. verif_image.sh
+verif_presence_image $1
 
 #. verif_exist_miniature.sh 
 #verif_exist_miniature $1 
