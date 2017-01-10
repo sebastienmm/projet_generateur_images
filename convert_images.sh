@@ -5,11 +5,12 @@
 
 convert_image(){
 	liste_fichier=$(`ls images`)
-	create_miniature=$(`mkdir miniatures`)
+	mkdir miniatures
 	
 	for fichier in $liste_fichier
 	do
-		convert $fichier -resize 100x100 $fichier_mini
-		mv $fichier_mini /miniatures
+		miniphoto="mini_$fichier"
+		convert $fichier -resize 100x100 "$miniphoto"
+		mv $miniphoto /miniatures
 	done
 }
