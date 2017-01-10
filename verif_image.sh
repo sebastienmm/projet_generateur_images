@@ -6,21 +6,17 @@
 verif_presence_image(){
 	
 	compteur_image=0
-	format= [[*.jpg]] [[*.png]] [[*.gif]] [[*.bmp]] 
 		
 	liste_fichier=`ls $1`
 	#sortie=`exit`
 
 	for fichier in $liste_fichier
 	do
-		for format in $format
-		do
-			if [[ "$fichier" = *.jpg ]] || [[ "$fichier" = *.png ]] || [[ "$fichier" = *.gif ]] || [[ "$fichier" = *.bmp ]]
-			then
-				compteur_image=$(( $compteur_image + 1))
-				echo "$compteur_image"
-			fi
-		done
+		if [[ "$fichier" = *.jpg ]] || [[ "$fichier" = *.png ]] || [[ "$fichier" = *.gif ]] || [[ "$fichier" = *.bmp ]]
+		then
+			compteur_image=$(( $compteur_image + 1))
+			echo "$compteur_image"
+		fi
 	done
 	if [ $compteur_image = 0 ]
 	then
