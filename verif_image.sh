@@ -17,7 +17,7 @@ verif_presence_image(){
 	do
 		if [ "$fichier" = "images" ]
 		then
-			for image for $liste_images
+			for image in $liste_images
 			do
 				if [[ "$image" = *.jpg ]] || [[ "$image" = *.png ]] || [[ "$image" = *.gif ]] || [[ "$image" = *.bmp ]]
 				then
@@ -34,13 +34,19 @@ verif_presence_image(){
 			echo "$compteur_image"
 		fi
 	done
-	if [ $compteur_image = 0 ]
+	if [ $compteur_image = 0 ] && [ $compteurbis_image = 0 ]
 	then
 		echo " le dossier ne contient pas d'image "
 		echo " Vous devait choisir un nouveau dossier "
 		echo `exit`
-	else	
+	elif [ $compteur_image != 0 ]	
+	then
 		echo " Il y a $compteur_image images dans le dossier "
+	elif [ $compteurbis_image != 0 ]
+	then
+		echo " Il y a $compteurbis_image images dans le dossier images "
+	else
+		echo " Salut les copains !! "
 	fi
 }
 

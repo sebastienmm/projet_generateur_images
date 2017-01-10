@@ -10,7 +10,8 @@ convert_image(){
 	for fichier in $liste_fichier
 	do
 		miniphoto="mini_$fichier"
-		convert $fichier -resize 100x100 "$miniphoto"
-		mv $miniphoto /miniatures
+		convert images/$fichier -resize 100x100 "$miniphoto"
+		chmod 777 $miniphoto
+		mv $miniphoto miniatures/
 	done
 }

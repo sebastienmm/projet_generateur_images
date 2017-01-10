@@ -4,7 +4,7 @@
 
 verif_exist_miniature(){
 
-liste_fichiers=$(`ls $1`)
+liste_fichiers=`ls $1`
 
 for fichier in liste_fichiers
 do
