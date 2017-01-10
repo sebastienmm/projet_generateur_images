@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # fonction permettant de verifier l'existence d'un dossier nommé miniature dans le dossier traité
 
@@ -7,12 +8,13 @@ liste_fichiers=$(`ls $1`)
 
 for fichier in liste_fichiers
 do
-	if [ "$fichier" = "miniatrures" ]
+	if [ "$fichier" = "miniatures" ]
+	then
 		echo " Le fichier miniatures existe déjà !! "
 	else
 		echo " La conversion des images en miniatures peut être réalisée "
 		. convert_images.sh
-		conversion_image 
+		convert_image 
 	fi
 done
 		

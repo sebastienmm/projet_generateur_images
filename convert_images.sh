@@ -4,7 +4,7 @@
 # dossier entré en argument
 
 convert_image(){
-	liste_fichier=$(`ls images`)
+	liste_fichier=`ls images`
 	mkdir miniatures
 	
 	for fichier in $liste_fichier

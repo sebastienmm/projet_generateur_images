@@ -6,14 +6,30 @@
 verif_presence_image(){
 	
 	compteur_image=0
+	compteurbis_image=0
 		
 	liste_fichier=`ls $1`
-	#sortie=`exit`
+	liste_images=`ls images`
+	
+	
 
 	for fichier in $liste_fichier
 	do
-		if [[ "$fichier" = *.jpg ]] || [[ "$fichier" = *.png ]] || [[ "$fichier" = *.gif ]] || [[ "$fichier" = *.bmp ]]
+		if [ "$fichier" = "images" ]
 		then
+			for image for $liste_images
+			do
+				if [[ "$image" = *.jpg ]] || [[ "$image" = *.png ]] || [[ "$image" = *.gif ]] || [[ "$image" = *.bmp ]]
+				then
+					compteurbis_image=$(( $compteurbis_image + 1))
+					echo "$compteurbis_image"
+				fi
+			done
+		echo " Le dossier images contient $compteurbis_image images"
+
+		elif [[ "$fichier" = *.jpg ]] || [[ "$fichier" = *.png ]] || [[ "$fichier" = *.gif ]] || [[ "$fichier" = *.bmp ]]
+		then
+			mv $fichier images/
 			compteur_image=$(( $compteur_image + 1))
 			echo "$compteur_image"
 		fi
@@ -27,4 +43,4 @@ verif_presence_image(){
 		echo " Il y a $compteur_image images dans le dossier "
 	fi
 }
-verif_presence_image $1
+
