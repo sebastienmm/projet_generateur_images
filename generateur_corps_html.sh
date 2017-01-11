@@ -1,7 +1,7 @@
 #!/bin/bash
 
 image_a_afficher=`ls miniatures`
-
+if [ $3 != galerie.html ]
 for image in $image_a_afficher
 do
 	echo "<body>
