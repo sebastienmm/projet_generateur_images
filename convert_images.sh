@@ -5,14 +5,13 @@
 
 convert_image(){
 	liste_fichier=`ls images`
-	taille=$2
 
 	mkdir miniatures
 	
 	for fichier in $liste_fichier
 	do
 		miniphoto="$fichier"
-		convert images/$fichier -resize $taille "$miniphoto"
+		convert images/$fichier -resize 100x100 "$miniphoto"
 		chmod 777 $miniphoto
 		mv $miniphoto miniatures/
 	done
