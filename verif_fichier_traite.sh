@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # fonction permettant de verifier si le premier argument du générateur de galerie est renseigné et
 # si l'argument correspond à un dossier existant
